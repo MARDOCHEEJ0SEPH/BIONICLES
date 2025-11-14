@@ -1,0 +1,77 @@
+[package]
+name = "bionicles-backend"
+version = "1.0.0"
+edition = "2021"
+authors = ["BIONICLES Development Team"]
+description = "Rust backend for BIONICLES Trading System with X402 protocol and USDT/USDC payments"
+
+[dependencies]
+# Web framework
+actix-web = "4.4"
+actix-cors = "0.7"
+actix-rt = "2.9"
+
+# Async runtime
+tokio = { version = "1.35", features = ["full"] }
+
+# Database
+sqlx = { version = "0.7", features = ["runtime-tokio-rustls", "postgres", "chrono", "uuid", "json"] }
+
+# Redis cache
+redis = { version = "0.24", features = ["tokio-comp", "connection-manager"] }
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Authentication
+jsonwebtoken = "9.2"
+bcrypt = "0.15"
+uuid = { version = "1.6", features = ["serde", "v4"] }
+
+# Environment variables
+dotenv = "0.15"
+config = "0.13"
+
+# Date/Time
+chrono = { version = "0.4", features = ["serde"] }
+
+# Logging
+env_logger = "0.11"
+log = "0.4"
+
+# Ethereum/Crypto
+ethers = { version = "2.0", features = ["ws", "abigen"] }
+web3 = "0.19"
+tiny-keccak = { version = "2.0", features = ["keccak"] }
+secp256k1 = { version = "0.28", features = ["recovery", "global-context"] }
+
+# HTTP client
+reqwest = { version = "0.11", features = ["json", "blocking"] }
+
+# Validation
+validator = { version = "0.16", features = ["derive"] }
+
+# Error handling
+anyhow = "1.0"
+thiserror = "1.0"
+
+# Async utilities
+futures = "0.3"
+async-trait = "0.1"
+
+# Rate limiting
+governor = "0.6"
+
+# Utilities
+rand = "0.8"
+regex = "1.10"
+
+[dev-dependencies]
+actix-web-test = "0.1"
+mockall = "0.12"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
