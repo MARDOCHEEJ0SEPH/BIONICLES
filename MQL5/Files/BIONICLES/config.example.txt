@@ -1,0 +1,63 @@
+# BIONICLES Trading System Configuration
+# Copy this file to config.txt and customize
+
+[General]
+Version=1.0
+LicenseMode=OFFLINE
+# Options: OFFLINE, X402
+
+[License]
+# For OFFLINE mode:
+LicenseKey=XXXX-XXXX-XXXX-XXXX
+
+# For X402 mode:
+APIUrl=https://api.bionicles.io
+APIKey=your-api-key-here
+Username=your-email@example.com
+
+[Trading]
+Symbol=EURUSD
+Timeframe=H4
+LookbackBars=60
+MaxRiskPercent=2.0
+MaxPortfolioRisk=5.0
+RiskRewardRatio=3.0
+
+[Entry]
+ATRPeriod=14
+RSIPeriod=14
+RSIOversold=40
+RSIOverbought=60
+CompressionThreshold=-2.0
+
+[Management]
+MaxConcurrentTrades=3
+MaxSameDirectionTrades=2
+BreakevenTrigger=1.0
+TrailingStopATR=1.0
+
+[Safety]
+DailyDrawdownLimit=10.0
+MaxEquityDrop=20.0
+MaxConsecutiveLosses=5
+HaltDurationHours=24
+
+[Reporting]
+EnableAlerts=true
+EnablePerformanceLog=true
+GenerateDailyReport=true
+EmailAlerts=false
+EmailAddress=
+
+[Advanced]
+# Debug settings
+LogLevel=INFO
+# Options: DEBUG, INFO, WARNING, ERROR, CRITICAL
+
+# Emergency stop
+EmergencyStopEnabled=true
+
+# Slippage tolerance
+MaxSlippagePips=3
+
+# End of configuration
